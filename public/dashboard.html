@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Dashboard — Hasan</title>
+    <link
+      rel="shortcut icon"
+      href="./img/util-img/favicon.png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <script defer src="/js/dashboard.js"></script>
+    <style>
+      /* small local tweaks for admin layout */
+      .login-card {
+        max-width: 420px;
+        margin: 20px auto;
+        padding: 18px;
+        background: rgba(2, 6, 23, 0.6);
+        border-radius: 10px;
+      }
+      .admin-grid {
+        display: flex;
+        gap: 18px;
+      }
+      .admin-left {
+        flex: 1;
+      }
+      .admin-right {
+        width: 360px;
+      }
+      .muted {
+        color: var(--muted);
+      }
+      .table-wrap {
+        overflow: auto;
+        background: transparent;
+        border-radius: 8px;
+        padding: 8px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: 8px;
+        text-align: left;
+        border-top: 1px solid rgba(255, 255, 255, 0.03);
+      }
+      .btn-danger {
+        background: #dc2626;
+        color: #fff;
+        padding: 8px 10px;
+        border-radius: 8px;
+        border: 0;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="nav">
+      <div class="brand">HASAN<span>Dashboard</span></div>
+      <nav><a href="/">Back to site</a></nav>
+    </header>
+
+    <main style="padding: 24px; max-width: 1100px; margin: 0 auto">
+      <div id="loginWrap" class="login-card">
+        <h2>Admin Login</h2>
+        <p class="muted">Sign in with your admin email & password</p>
+        <input
+          id="email"
+          placeholder="Email"
+          style="width: 100%; padding: 10px; margin: 8px 0; border-radius: 8px"
+        />
+        <input
+          id="password"
+          type="password"
+          placeholder="Password"
+          style="width: 100%; padding: 10px; margin: 8px 0; border-radius: 8px"
+        />
+        <div style="display: flex; gap: 10px">
+          <button id="loginBtn" class="btn primary">Login</button>
+          <button id="logoutBtn" class="btn" style="display: none">
+            Logout
+          </button>
+        </div>
+        <p id="loginMsg" class="muted"></p>
+      </div>
+
+      <div id="dash" style="display: none">
+        <h2>Overview</h2>
+        <div
+          id="stats"
+          style="display: flex; gap: 10px; margin-bottom: 16px"
+        ></div>
+
+        <div class="admin-grid">
+          <div class="admin-left">
+            <section>
+              <h3>Create Post</h3>
+              <form id="postForm">
+                <input name="author" placeholder="Author name" />
+                <textarea
+                  name="text"
+                  rows="4"
+                  placeholder="Write your post..."
+                ></textarea>
+                <input type="file" name="files" multiple />
+                <button class="btn primary" type="submit">Publish</button>
+              </form>
+            </section>
+
+            <section style="margin-top: 18px">
+              <h3>Recent Posts</h3>
+              <div id="postsList"></div>
+            </section>
+          </div>
+
+          <div class="admin-right">
+            <section>
+              <h3>Messages</h3>
+              <div>
+                <label
+                  >Per page:
+                  <select id="msgLimit">
+                    <option>5</option>
+                    <option selected>10</option>
+                    <option>20</option>
+                  </select>
+                </label>
+              </div>
+              <div
+                id="messagesWrap"
+                class="table-wrap"
+                style="margin-top: 10px"
+              ></div>
+              <div style="display: flex; gap: 8px; margin-top: 8px">
+                <button id="prevPage" class="btn">Prev</button>
+                <button id="nextPage" class="btn">Next</button>
+                <div style="margin-left: auto" id="pageInfo"></div>
+              </div>
+            </section>
+
+            <section style="margin-top: 18px">
+              <h3>Utilities</h3>
+              <button id="exportMessages" class="btn">
+                Export messages (Excel)
+              </button>
+              <button id="exportPosts" class="btn">Export posts (Excel)</button>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

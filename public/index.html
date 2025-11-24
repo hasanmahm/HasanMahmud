@@ -1,0 +1,209 @@
+<!-- Updated partial redesign for index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title> Hasan Mahmud </title>
+    <link rel="shortcut icon" href="./img/util-img/favicon.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="./js/main.js"></script>
+  </head>
+  <body>
+    <header class="nav">
+      <div class="brand">HASAN<span> MAHMUD</span></div>
+      <nav class="navlinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+        <a href="/dashboard.html" class="btn small">Dashboard</a>
+      </nav>
+      <button id="menuToggle" class="menu-toggle">☰</button>
+    </header>
+
+    <!-- HOME SECTION (Animated pictures added) -->
+    <section id="home" class="hero">
+      <div class="hero-left">
+        <div class="carousel animated-carousel" id="carousel"></div>
+      </div>
+
+      <div class="hero-right">
+        <h1 class="hero-title">Hi, I’m <span class="glow-text">Hasan</span></h1>
+        <p class="lead">
+Aspiring Accounting professional and web developer — building real-world digital solutions while preparing for advanced studies abroad.
+        </p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn primary">Hire Me</a>
+          <a href="https://drive.google.com/file/d/1x6SpqZItfvR6lQT_3RxJouDqUXp6F-6d/view?usp=sharing" target="_blank" class="btn outline" download>Download CV</a>
+        </div>
+        <div class="quick-stats" id="quickStats"></div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION (Neon light + better layout) -->
+    <section id="about" class="about-section neon-wrap">
+      <div class="container">
+        <div class="neon-line"></div>
+        <img src="./img/img1.jpg" alt="Hasan" class="avatar glow-avatar" />
+
+        <div class="about-content">
+          <h2 class="section-title">About Me</h2>
+          <p>
+            I’m Hasan Mahmud, a student of the University of Dhaka, Department of Accounting (Batch 2024–25). I’m passionate about Accounting, business analysis, and modern web development.
+
+I enjoy creating clean and user-friendly websites using HTML, CSS, and JavaScript, and I’m working toward building my own payment gateway project. I aim to pursue higher studies abroad and grow as a skilled professional in Accounting or Marketing.
+          </p>
+          <ul class="meta">
+            <li><strong>Institute: </strong> University of Dhaka</li>
+            <li><strong>Department:</strong> Accounting</li>
+            <li><strong>Batch:</strong> 2024-25</li>
+            <li><strong>Location:</strong> Bangladesh</li>
+          </ul>
+          <a class="btn primary" href="#services">Explore Services</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="services-section">
+      <h2>Services</h2>
+
+      <div class="services-grid">
+        <!-- WEB DEVELOPMENT -->
+        <div class="service-card">
+          <div class="icon-box">
+            <img src="./img/util-img/skills.gif" alt="" />
+          </div>
+          <h3>Web Development</h3>
+          <p>
+            Modern, responsive, fast, and secure websites using HTML, CSS, JS,
+            Node.js with clean UX-focused design.
+          </p>
+        </div>
+
+        <!-- DATA ENTRY -->
+        <div class="service-card">
+          <div class="icon-box">
+            <img src="./img/util-img/skills.gif" alt="" />
+          </div>
+          <h3>Data Entry</h3>
+          <p>
+            Professional data entry,WORD, POWERPOINT, Excel automation,  formatting and error-free
+            database management.
+          </p>
+        </div>
+
+        <!-- CREATIVE DESIGN -->
+        <div class="service-card">
+          <div class="icon-box">
+            <img src="./img/util-img/skills.gif" alt="" />
+          </div>
+          <h3>Creative Design</h3>
+          <p>
+            Logo, banner, thumbnail, poster and modern UI/UX graphics designed
+            with clean aesthetic sense.
+          </p>
+        </div>
+
+
+      </div>
+    </section>
+
+    <!-- BLOG (3‑column fixed grid) -->
+    <section id="blog" class="blog-section">
+      <h2>Blog</h2>
+      <div id="blogList" class="blog-list three-grid"></div>
+      <div class="blog-empty muted" id="blogEmpty" style="display: none">
+        No posts yet — check dashboard to publish.
+      </div>
+    </section>
+
+    <!-- CONTACT (Facebook‑style form + icons) -->
+    <section id="contact" class="contact-section">
+      <h2>Contact</h2>
+
+      <div class="contact-grid contact-fb">
+        <form id="contactForm" class="fb-form">
+          <h3 class="fb-title">Send me a message</h3>
+          <input name="name" placeholder="Full name" required />
+          <input
+            name="email"
+            type="email"
+            placeholder="Email address"
+            required
+          />
+          <input name="phone" placeholder="Phone (optional)" />
+          <textarea
+            name="message"
+            rows="6"
+            placeholder="Your message..."
+            required
+          ></textarea>
+          <button type="submit" class="btn fb-btn">Send</button>
+        </form>
+
+        <aside class="contact-info" ">
+          <h3>Other ways</h3>
+          <p>Phone: <a href="tel:+8801300987956">+8801300987956</a></p>
+          <p>
+            Email:
+            <a href="mailto:alvimahmud55@gmail.com">alvimahmud55@gmail.com</a>
+          </p>
+
+          <div class="social-icons grid_c" >
+            <a href="https://facebook.com/alvimahmud55" target="_blank"
+              ><img src="./img/util-img/fb.png" alt="fb"
+            /></a>
+            <a href="https://github.com/hasanmahm" target="_blank"
+              ><img class="github" src="./img/util-img/github.png" alt="github"
+            /></a>
+            <a
+              href="https://linkedin.com/in/zahir-alvi-a6b289257"
+              target="_blank"
+              ><img src="./img/util-img/linkedin.png" alt="linkedin"
+            /></a>
+            <a
+              href="https://x.com/hasanmahmud56"
+              target="_blank"
+              ><img class="x" src="./img/util-img/x.png" alt="x.com"
+            /></a>
+                      <a
+              href="https://www.instagram.com/ahmahmud55/"
+              target="_blank"
+              ><img class="instagram" src="./img/util-img/insta.gif" alt="instagram"
+            /></a>
+                        <a
+              href="https://www.youtube.com/channel/UCD8wxdsH612TKjlSC-zQcdA"
+              target="_blank"
+              ><img src="./img/util-img/yt.png" alt="youtube"
+            /></a>
+          </div>
+  
+            <p class="muted small-text">Messages are saved and sent securely.</p>
+          </div>
+
+          </div>
+
+          
+        </aside>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <p>Made with ❤️ by Hasan</p>
+        <p class="muted">© <span id="year"></span> All rights reserved</p>
+      </div>
+    </footer>
+
+  
+  </body>
+</html>
