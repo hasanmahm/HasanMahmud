@@ -236,7 +236,19 @@ app.get("/api/messages", requireAdmin, (req, res) => {
     res.status(500).json({ ok: false, error: err.message });
   }
 });
-
+// === NEW: delete a single message (admin-only) ===
+app.delete("/api/messages/:id", requireAdmin, (req, res) => {
+  try {
+    const id = req.params.id;
+    const all = readJson(MSG_FILE, []);
+    const filtered = all.filter((m) => String(m.id) !== String(id));
+    writeJson(MSG_FILE, filtered);
+    res.json({ ok: true });
+  } catch (err) {
+    console.error("Delete message error:", err);
+    res.status(500).json({ ok: false, error: err.message });
+  }
+});
 // stats
 app.get("/api/stats", (req, res) => {
   const hits = readJson(HITS_FILE, { hits: 0 }).hits || 0;
